@@ -1,0 +1,51 @@
+{
+    "name": "p3x-verdaccio-cli",
+    "version": "2019.1.23-0",
+    "corifeus": {
+        "prefix": "p3x-",
+        "publish": true,
+        "type": "p3x",
+        "code": "Sake",
+        "nodejs": "v11.7.0",
+        "opencollective": false,
+        "reponame": "verdaccio-cli",
+        "build": true
+    },
+    "bin": {
+        "verdaccio-cli": "bin/verdaccio-cli.js"
+    },
+    "license": "MIT",
+    "description": "🍶 Verdaccio CLI",
+    "main": "src/index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "grunt"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/patrikx3/verdaccio-cli.git"
+    },
+    "keywords": [
+        "verdaccio",
+        "cli"
+    ],
+    "author": "Patrik Laszlo <alabard@gmail.com>",
+    "bugs": {
+        "url": "https://github.com/patrikx3/verdaccio-cli/issues"
+    },
+    "homepage": "https://pages.corifeus.com/verdaccio-cli",
+    "devDependencies": {
+        "corifeus-builder": "^2019.1.19-1"
+    },
+    "dependencies": {
+        "commander": "^2.19.0",
+        "corifeus-utils": "^2019.1.19-1",
+        "fs-extra": "^7.0.1",
+        "js-yaml": "^3.12.1"
+    },
+    "engines": {
+        "node": ">=10.13.0"
+    }
+}

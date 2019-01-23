@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+./bin/p3x-verdaccio-cli.js --config=/home/patrikx3/Desktop/Downloads/npm/config.yaml  -d cache clean
