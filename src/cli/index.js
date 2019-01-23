@@ -16,7 +16,8 @@ const parseConfig = async (opts) => {
 }
 
 const availableCacheRoutine = [
-    'clean'
+    'clean',
+    'info',
 ]
 
 const start = async() => {
@@ -34,7 +35,7 @@ const start = async() => {
 
             try {
                 if (!availableCacheRoutine.includes(routine)) {
-                    return console.error(`The cache <routine> is not available '${routine}, the available routines are ${availableCacheRoutine.join(',')}`)
+                    return console.error(`The cache <routine> is not available '${routine}', the available routines are ${availableCacheRoutine.join(', ')}.`)
                 }
 
                 //console.warn(options)
@@ -49,15 +50,6 @@ const start = async() => {
                 const packageFolders = await fs.readdir(storagePath)
                 //console.warn(packageFolders)
 
-                if (program.dry === true) {
-                    console.info(`
-Own packages: ${db.list.join(',')}
-Own packages count: ${db.list.length}
-
-Total of package count without own packages: ${packageFolders.length - db.list.length}
-`)
-                    return
-                }
                 const packageFoldersWithoutOwn = []
 
                 const packageFolderPathStatAwaitable = []
@@ -77,6 +69,16 @@ Total of package count without own packages: ${packageFolders.length - db.list.l
                     if (stat.isDirectory() && !db.list.includes(packagePath)) {
                         packageFoldersWithoutOwn.push(packagePath)
                     }
+                }
+
+                if (program.dry === true || routine === 'info') {
+                    console.info(`
+Own packages: ${db.list.join(', ')}
+Own packages count: ${db.list.length}
+
+Total of package count without own packages: ${packageFoldersWithoutOwn.length}
+`)
+                    return
                 }
 
 
