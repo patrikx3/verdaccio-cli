@@ -46,7 +46,7 @@ https://nodejs.org/en/download/package-manager/
 [//]: #@corifeus-header:end
 
 
-It is that first `p3x-verdaccio-cli` version.  
+It is that first `p3x-verdaccio-cli` versionm that is working with the [Verdaccio](https://github.com/verdaccio).
 
 ## Features
 
@@ -58,7 +58,9 @@ p3x-verdaccio-cli
 
 ### Clean remote cache
 
-⚠️ This is only working with the original Sinopia file system storage driver!!!
+⚠️ **This is only working with the original Sinopia file system storage driver!!!** 
+ 
+Of course, with an option eg. `--storage=azure` it could be enabled.
 
 ```bash
 # first you can try a dry run
