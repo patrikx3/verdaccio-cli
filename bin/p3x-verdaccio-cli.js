@@ -5,4 +5,4 @@ if (!require('fs').existsSync(`${__dirname}/../node_modules`)) {
     });
 }
 
-require('../src/cli')
+require('../src')
