@@ -17,7 +17,7 @@ const defaultFn = async (settings, routine, options) => {
     const program = require('commander')
 
     if (!availablePackageRoutine.includes(routine)) {
-        return console.error(`The ' + root + ' <routine> is not available '${routine}', the available routines are ${availablePackageRoutine.join(', ')}.`)
+        return console.error(`The '${routine}' <routine> is not available , the available routines are ${availablePackageRoutine.join(', ')}.`)
     }
 
     const { minimum } = settings

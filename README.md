@@ -11,7 +11,7 @@
 
 
  
-# 🍶 Verdaccio CLI v2019.2.8-2  
+# 🍶 Verdaccio CLI v2019.2.15-2  
 
   
 🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
@@ -30,7 +30,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
    
 ### Built on Node 
 ``` 
-v11.9.0
+v11.10.0
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -105,10 +105,10 @@ p3x-verdaccio-cli --config /var/npm/config.yml cache clean
 
 ```bash
 # first you can try a dry run and give some output info
-p3x-verdaccio-cli --config /var/npm/config.yml --dry pkg-rm my-own-pkg 
+p3x-verdaccio-cli --config /var/npm/config.yaml --dry pkg-rm my-own-pkg 
 
 # actually it removes a package
-p3x-verdaccio-cli --config /var/npm/config.yml pkg-rm my-own-pkg 
+p3x-verdaccio-cli --config /var/npm/config.yaml pkg-rm my-own-pkg 
 ```
 
 ## Package
@@ -119,13 +119,13 @@ This function removes old versions from Verdaccio and keep the set minimum versi
 
 ```bash
 # first you can try a dry run and give some output info
-p3x-verdaccio-cli --config /var/npm/config.yml --dry pkg keep 
+p3x-verdaccio-cli --config /var/npm/config.yaml --dry pkg keep 
 
 # actually keeps 3 last versions of your all own packages
-p3x-verdaccio-cli --config /var/npm/config.yml pkg keep 
+p3x-verdaccio-cli --config /var/npm/config.yaml pkg keep 
 
 # if you want more versions, use the --min flag, and keep 10 versions for each packages
-p3x-verdaccio-cli --config /var/npm/config.yml pkg keep --min 10
+p3x-verdaccio-cli --config /var/npm/config.yaml pkg keep --min 10
 ```
 
 
@@ -133,7 +133,7 @@ p3x-verdaccio-cli --config /var/npm/config.yml pkg keep --min 10
 
 ---
 
-[**P3X-VERDACCIO-CLI**](https://pages.corifeus.com/verdaccio-cli) Build v2019.2.8-2 
+[**P3X-VERDACCIO-CLI**](https://pages.corifeus.com/verdaccio-cli) Build v2019.2.15-2 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
