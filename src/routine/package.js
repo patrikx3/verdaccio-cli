@@ -12,7 +12,7 @@ const chalk = require('chalk')
 
 const defaultFn = async (settings, routine, options) => {
 
-    const { root } = settings;
+    const {root} = settings;
 
     const program = require('commander')
 
@@ -20,7 +20,7 @@ const defaultFn = async (settings, routine, options) => {
         return console.error(`The '${routine}' <routine> is not available , the available routines are ${availablePackageRoutine.join(', ')}.`)
     }
 
-    const { minimum } = settings
+    const {minimum} = settings
     if (options.min === undefined) {
         options.min = minimum
     }
@@ -38,7 +38,7 @@ const defaultFn = async (settings, routine, options) => {
     const db = defaults.db
 
     const awaitablePackages = []
-    for(let dbItem of db.list) {
+    for (let dbItem of db.list) {
         awaitablePackages.push(
             fs.readFile(path.resolve(defaults.storagePath, `${dbItem}/package.json`))
         )
@@ -47,7 +47,7 @@ const defaultFn = async (settings, routine, options) => {
     let foundBuffers
     try {
         foundBuffers = await Promise.all(awaitablePackages);
-    } catch(e) {
+    } catch (e) {
         if (e.code === 'ENOENT') {
             const pkgName = path.basename(path.dirname(e.path))
             console.warn(chalk.yellow(`
@@ -63,10 +63,10 @@ ${program._name} --config ${program.config} pkg-rm ${pkgName}
 
     const pkgRegistry = {}
 
-    for(let dbItemIndex in db.list) {
+    for (let dbItemIndex in db.list) {
         const dbItem = db.list[dbItemIndex]
         const pkgBuffer = foundBuffers[dbItemIndex]
-        pkgRegistry[dbItem]  = JSON.parse(pkgBuffer.toString());
+        pkgRegistry[dbItem] = JSON.parse(pkgBuffer.toString());
     }
 
     if (program.dry === true || routine === 'info' || options.confirm !== true) {
@@ -79,7 +79,7 @@ Will keep last versions: ${options.min}
         const table = new Table({
             head: ['Package', 'Version count']
         });
-        for(let pkgName of Object.keys(pkgRegistry)) {
+        for (let pkgName of Object.keys(pkgRegistry)) {
             table.push(
                 [pkgName, Object.keys(pkgRegistry[pkgName].time).length - 2]
             )
@@ -154,7 +154,7 @@ Will keep last versions: ${options.min}
             }
         }
 
-        const removeFileNamed = async(prop) => {
+        const removeFileNamed = async (prop) => {
             let versionsNamed = Object.keys(pkgNamed[prop])
 
             for await(let versionName of versionsNamed) {
@@ -179,14 +179,14 @@ Will keep last versions: ${options.min}
         //console.log(Object.keys(sortedVersions).length)
         //console.info()
 
-       await fs.writeFile(path.resolve(defaults.storagePath, `${pkgName}/package.json`), JSON.stringify(pkgNamed, null, 4))
+        await fs.writeFile(path.resolve(defaults.storagePath, `${pkgName}/package.json`), JSON.stringify(pkgNamed, null, 4))
 
     }
 
     console.info(table.toString())
 }
 
-const remove = async(pkgName, options) => {
+const remove = async (pkgName, options) => {
 
     const program = require('commander')
     const defaults = await lib.defaults();
@@ -209,7 +209,7 @@ The available db packages: ${db.list.join(", ")}
         return;
     }
     await fsExtra.remove(path.resolve(defaults.storagePath, pkgName))
-    db.list = db.list.filter(dbItem =>  dbItem !== pkgName)
+    db.list = db.list.filter(dbItem => dbItem !== pkgName)
     await fs.writeFile(defaults.dbPath, JSON.stringify(db))
 
     console.info(`Removed package: ${pkgName}`)
