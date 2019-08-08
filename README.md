@@ -74,17 +74,16 @@ p3x-verdaccio-cli --config /var/npm/config.yaml cache info
 
 #### Output
 ```text
-root@server:/var/npm# npm i -g p3x-verdaccio-cli
-/usr/bin/p3x-verdaccio-cli -> /usr/lib/node_modules/p3x-verdaccio-cli/bin/p3x-verdaccio-cli.js
-+ p3x-verdaccio-cli@2019.1.23-16
-updated 1 package in 0.953s
-root@server:/var/npm# p3x-verdaccio-cli --config=/var/npm/config.yaml cache info
-(node:23539) ExperimentalWarning: The fs.promises API is experimental
+root@server:~# p3x-verdaccio-cli --config /var/npm/config.yaml cache info
+Please add a flag --confirm and only add this flag after you stopped Verdaccio!
 
-Own packages: corifeus-utils, corifeus-builder, corifeus-builder-angular, corifeus-web, corifeus-web-material, p3x-aes-folder, p3x-angular-compile, p3x-docker-registry-client, p3x-html-pdf, p3x-onenote, p3x-ramdisk, p3x-systemd-manager, p3x-tools, p3x-freenom, grunt-p3x-express, corifeus-server, p3x-redis-ui-server, p3x-redis-ui-material, p3x-redis-ui, grunt-injector, p3x-verdaccio-cli
-Own packages count: 21
+Own packages: corifeus-utils, corifeus-builder, corifeus-builder-angular, corifeus-web, corifeus-web-material, p3x-aes-folder, p3x-angular-compile, p3x-html-pdf, p3x-onenote, p3x-ramdisk, p3x-systemd-manager, p3x-tools, p3x-freenom, grunt-p3x-express, corifeus-server, p3x-redis-ui-server, p3x-redis-ui-material, p3x-redis-ui, p3x-verdaccio-cli, p3x-xml2json
+Own packages count: 20
 
-Total of package count without own packages: 771
+Total of package count without own packages: 1668
+
+
+Please add a flag --confirm and only add this flag after you stopped Verdaccio!
 ```
 
 ### Clean
@@ -123,6 +122,9 @@ p3x-verdaccio-cli --config /var/npm/config.yaml pkg keep
 # if you want more versions, use the --min flag, and keep 10 versions for each packages
 p3x-verdaccio-cli --config /var/npm/config.yaml pkg keep --min 10
 ```
+
+
+⚠️ **MAKE SURE TO START VERDACCIO AFTER YOU HAVE DONE!!!** 
 
 
 [//]: #@corifeus-footer
