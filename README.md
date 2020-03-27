@@ -45,8 +45,6 @@ It is that first `p3x-verdaccio-cli` version that is working with the [Verdaccio
   
 Based on https://github.com/verdaccio/verdaccio/issues/343
   
-What is good about this, that when I checked my cache count is 1981, after clean my cache and reinstall my all repos is down to 881.
-
 Of course, with an option eg. `--storage=azure` it could be enabled.
 
 ⚠️ **MAKE SURE TO STOP VERDACCIO BEFORE YOU CONTINUE AND MAKE SURE TO BACKUP BEFORE YOU CHANGE ANYTHING, SO THAT YOU COULD REVERT IF SOMETHING IS NOT STATISFYING!!!** 
