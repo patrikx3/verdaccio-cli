@@ -12,7 +12,7 @@ const chalk = require('chalk')
 
 const cache = async (routine, options) => {
 
-    const program = require('commander')
+    const { program } = require('commander')
 
 
     if (!availableCacheRoutine.includes(routine)) {
@@ -50,7 +50,7 @@ const cache = async (routine, options) => {
     }
 
 
-    if (program.dry === true || routine === 'info' || options.confirm !== true) {
+    if (program.opts().dry === true || routine === 'info' || options.confirm !== true) {
         console.info(`
 Own packages: ${defaults.db.list.join(', ')}
 Own packages count: ${defaults.db.list.length}

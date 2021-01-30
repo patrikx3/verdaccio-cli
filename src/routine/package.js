@@ -14,7 +14,7 @@ const defaultFn = async (settings, routine, options) => {
 
     const {root} = settings;
 
-    const program = require('commander')
+    const { program } = require('commander')
 
     if (!availablePackageRoutine.includes(routine)) {
         return console.error(`The '${routine}' <routine> is not available , the available routines are ${availablePackageRoutine.join(', ')}.`)
@@ -53,7 +53,7 @@ const defaultFn = async (settings, routine, options) => {
             console.warn(chalk.yellow(`
 It looks like the package '${pkgName}' present is the db, but is deleted from file system.
 To fix this error, please do this:
-${program._name} --config ${program.config} pkg-rm ${pkgName}
+${program._name} --config ${program.opts().config} pkg-rm ${pkgName}
 `))
             return
         } else {
@@ -69,7 +69,7 @@ ${program._name} --config ${program.config} pkg-rm ${pkgName}
         pkgRegistry[dbItem] = JSON.parse(pkgBuffer.toString());
     }
 
-    if (program.dry === true || routine === 'info' || options.confirm !== true) {
+    if (program.opts().dry === true || routine === 'info' || options.confirm !== true) {
         console.info(`
 Own packages: ${defaults.db.list.join(', ')}
 Own packages count: ${defaults.db.list.length}
@@ -188,7 +188,7 @@ Will keep last versions: ${options.min}
 
 const remove = async (pkgName, options) => {
 
-    const program = require('commander')
+    const { program } = require('commander')
     const defaults = await lib.defaults();
     const db = defaults.db
 
@@ -202,7 +202,7 @@ The available db packages: ${db.list.join(", ")}
         return
     }
 
-    if (program.dry === true || options.confirm !== true) {
+    if (program.opts().dry === true || options.confirm !== true) {
         console.info(`Could remove package: ${pkgName}`)
 
         lib.confirmInfo(options)

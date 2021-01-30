@@ -13,13 +13,13 @@ const parseConfig = async (opts) => {
 }
 
 module.exports.defaults = async () => {
-    const program = require('commander')
+    const { program } = require('commander')
 
     //console.warn(options)
-    const configPath = path.dirname(program.config)
+    const configPath = path.dirname(program.opts().config)
 
     const config = await parseConfig({
-        config: program.config
+        config: program.opts().config
     })
     const storagePath = path.resolve(configPath, config.storage)
     const dbPath = path.resolve(storagePath, '.sinopia-db.json');

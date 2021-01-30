@@ -1,4 +1,4 @@
-const program = require('commander')
+const { program } = require('commander')
 const lib = require('./lib')
 const pkg = lib.pkg
 
@@ -58,7 +58,7 @@ const start = async () => {
 
     if (!process.argv.slice(2).length) {
         program.outputHelp();
-    } else if (program.config === undefined) {
+    } else if (program.opts().config === undefined) {
         return console.error(`The ${pkg.name} program's first argument should be like '--config=/verdaccio/path/config.yaml' and should present.`)
     }
 
