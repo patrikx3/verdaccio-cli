@@ -22,7 +22,7 @@ module.exports.defaults = async () => {
         config: program.opts().config
     })
     const storagePath = path.resolve(configPath, config.storage)
-    const dbPath = path.resolve(storagePath, '.sinopia-db.json');
+    const dbPath = path.resolve(storagePath, '.verdaccio-db.json');
     const db = require(dbPath)
 
     return {
