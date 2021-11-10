@@ -37,7 +37,7 @@
     },
     "homepage": "https://corifeus.com/verdaccio-cli",
     "devDependencies": {
-        "corifeus-builder": "^2021.10.176"
+        "corifeus-builder": "^2021.10.181"
     },
     "dependencies": {
         "chalk": "^4.1.2",
