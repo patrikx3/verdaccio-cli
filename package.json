@@ -1,6 +1,6 @@
 {
     "name": "p3x-verdaccio-cli",
-    "version": "2022.4.111",
+    "version": "2022.4.115",
     "corifeus": {
         "prefix": "p3x-",
         "publish": true,
@@ -37,7 +37,7 @@
     },
     "homepage": "https://corifeus.com/verdaccio-cli",
     "devDependencies": {
-        "corifeus-builder": "^2022.4.111"
+        "corifeus-builder": "^2022.4.115"
     },
     "dependencies": {
         "chalk": "^4.1.2",
