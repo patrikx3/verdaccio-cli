@@ -1,12 +1,12 @@
 {
     "name": "p3x-verdaccio-cli",
-    "version": "2025.4.119",
+    "version": "2025.4.122",
     "corifeus": {
         "prefix": "p3x-",
         "publish": true,
         "type": "p3x",
         "code": "Sake",
-        "nodejs": "v22.13.0",
+        "nodejs": "v22.13.1",
         "opencollective": false,
         "reponame": "verdaccio-cli",
         "build": true
@@ -37,12 +37,12 @@
     },
     "homepage": "https://corifeus.com/verdaccio-cli",
     "devDependencies": {
-        "corifeus-builder": "^2025.4.128"
+        "corifeus-builder": "^2025.4.135"
     },
     "dependencies": {
         "chalk": "^4.1.2",
         "cli-table": "^0.3.11",
-        "commander": "^13.0.0",
+        "commander": "^13.1.0",
         "fs-extra": "^11.3.0",
         "js-yaml": "^4.1.0"
     },
